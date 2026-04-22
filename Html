@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Periodic Table Ultimate</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Interactive Periodic Table</h1>
+
+<button id="themeToggle">🌙 Dark Mode</button>
+<input type="text" id="search" placeholder="Search element...">
+
+<div id="legend">
+  <span class="alkali">Alkali</span>
+  <span class="alkaline">Alkaline</span>
+  <span class="transition">Transition</span>
+  <span class="metalloid">Metalloid</span>
+  <span class="nonmetal">Non-metal</span>
+  <span class="halogen">Halogen</span>
+  <span class="noble">Noble Gas</span>
+</div>
+
+<div id="table"></div>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="close">&times;</span>
+    <h2 id="title"></h2>
+    <div id="content"></div>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
