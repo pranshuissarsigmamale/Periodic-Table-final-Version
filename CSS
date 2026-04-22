@@ -1,0 +1,174 @@
+:root {
+    --bg:#0f172a;
+    --text:#ffffff;
+    --card:#1e293b;
+}
+
+body.light {
+    --bg:#f1f5f9;
+    --text:#0f172a;
+    --card:#ffffff;
+}
+
+body {
+    background:var(--bg);
+    color:var(--text);
+    text-align:center;
+    font-family:Arial;
+    transition:0.3s;
+    scroll-behavior:smooth;
+}
+
+/* CONTROLS */
+#search, #themeToggle {
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    margin:10px;
+}
+
+#themeToggle {
+    cursor:pointer;
+    background:#3b82f6;
+    color:white;
+}
+
+/* TABLE */
+#table {
+    display:grid;
+    grid-template-columns:repeat(18, minmax(40px, 1fr));
+    gap:6px;
+    max-width:1200px;
+    margin:auto;
+    padding:10px;
+}
+
+.element {
+    background:var(--card);
+    padding:8px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.2s;
+    will-change:transform;
+}
+
+.element:hover {
+    transform:translateY(-5px) scale(1.1);
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.highlight {
+    outline:3px solid white;
+    transform:scale(1.15);
+    z-index:2;
+}
+
+/* COLORS */
+.element.alkali{background:#ef4444;}
+.element.alkaline{background:#f97316;}
+.element.transition{background:#eab308;}
+.element.metalloid{background:#22c55e;}
+.element.nonmetal{background:#06b6d4;}
+.element.halogen{background:#3b82f6;}
+.element.noble{background:#8b5cf6;}
+
+/* MODAL */
+.modal {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    opacity:0;
+    pointer-events:none;
+    transition:0.3s;
+}
+
+.modal.show {
+    opacity:1;
+    pointer-events:auto;
+}
+
+.modal-content {
+    background:var(--card);
+    color:var(--text);
+    margin:10% auto;
+    padding:20px;
+    width:400px;
+    border-radius:10px;
+    transform:scale(0.8);
+    transition:0.3s;
+    max-height:80vh;
+    overflow-y:auto;
+    position:relative;
+    box-shadow:0 0 30px rgba(59,130,246,0.3);
+}
+
+.modal.show .modal-content {
+    transform:scale(1);
+}
+
+#close {
+    position:absolute;
+    right:15px;
+    cursor:pointer;
+}
+
+/* ORBITAL */
+.orbital {
+    display:inline-block;
+    margin:3px;
+    opacity:0;
+}
+
+.orbital-box {
+    display:inline-block;
+    border:1px solid white;
+    width:30px;
+    height:30px;
+    margin:2px;
+    line-height:30px;
+}
+
+/* ATOM */
+.atom {
+    position:relative;
+    width:200px;
+    height:200px;
+    margin:20px auto;
+}
+
+.orbit {
+    position:absolute;
+    border:1px solid white;
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.electron {
+    width:6px;
+    height:6px;
+    background:#38bdf8;
+    border-radius:50%;
+    position:absolute;
+    top:0;
+    left:50%;
+}
+
+.orbiting {
+    animation:spin linear infinite;
+    transform-origin:center;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg) translateX(50%); }
+    to { transform: rotate(360deg) translateX(50%); }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .modal-content {
+        width:90%;
+    }
+}
