@@ -1,3 +1,4 @@
+alert("JS WORKING");
 window.addEventListener("DOMContentLoaded", () => {
 
 const table = document.getElementById("table");
